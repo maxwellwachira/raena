@@ -4,7 +4,7 @@ import Script from 'next/script';
 import { ColorScheme, MantineProvider } from '@mantine/core';
 
 import '../styles/globals.css';
-import PageLoader from '../components/pageLoader/pageLoader';
+import PageLoader from '../components/common/pageLoader/pageLoader';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false);
