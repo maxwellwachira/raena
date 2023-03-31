@@ -1,9 +1,13 @@
-import Hero from '@/components/hero/hero';
-import Layout from '@/components/layout/layout';
-import { colors } from '@/constants/colors';
-import { Container, Text } from '@mantine/core';
+import Footer from '@/components/common/footer/footer';
+import Hero from '@/components/home/hero/hero';
+import PreparingStudents from '@/components/home/preparingStudents/preparingStudents';
+import Testimonials from '@/components/home/testimonials/testimonials';
+import Wave from '@/components/home/wave/wave';
+import WhatWeOffer from '@/components/home/whatWeOffer/whatWeOffer';
+import WhatWeProvide from '@/components/home/whatWeProvide/whatWeProvide';
+import Layout from '@/components/common/layout/layout';
+import { footerData } from '@/constants/footer';
 import Head from 'next/head';
-import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -16,10 +20,12 @@ export default function Home() {
       </Head>
      <Layout>
         <Hero />
-        <Container mt={40}>
-          <Text color={colors.primaryColor} weight={600} fz={36} align='center'>Your Success is Our Top Priority</Text>
-          <Text align='center' mt={10}>Welcome to our learning center, where we offer a wide range of subjects designed to help our students unlock their full potential. Our fun and engaging lessons, expert instructors, and personalized attention make it easy for students to excel in school and beyond</Text>
-        </Container>
+        <Wave />
+        <WhatWeOffer />
+        <PreparingStudents />
+        <WhatWeProvide />
+        <Testimonials />
+        <Footer data={footerData} />
      </Layout>
     </>
   )
