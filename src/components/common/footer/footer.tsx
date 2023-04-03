@@ -73,24 +73,32 @@ function Footer({ data }: FooterLinksProps) {
           <Anchor href="" target="_blank">
             <Image 
               src={instagramIcon}
+              width={22}
+              height={22}
               alt="Instagram"
             />
           </Anchor>
           <Anchor href="" target="_blank">
             <Image 
               src={facebookIcon}
+              width={22}
+              height={22}
               alt="Facebook"
             />
           </Anchor>
           <Anchor href="" target="_blank">
             <Image 
               src={twitterIcon}
+              width={22}
+              height={22}
               alt="Twitter"
             />
           </Anchor>
           <Anchor href="" target="_blank">
             <Image 
               src={linkedinIcon}
+              width={22}
+              height={22}
               alt="Linkedin"
             />
           </Anchor>
