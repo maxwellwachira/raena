@@ -140,7 +140,7 @@ const Layout = ({ children }: Props) => {
                 </Drawer>
             </Navbar>}
         >
-            <Anchor className={classes.whatsapp} href='https://wa.me/254703519593?text=Hello%2C%20I%20am%20interested%20in%20Atego' target='_blank'>
+            <Anchor className={classes.whatsapp} href='https://wa.me/254721794005?text=Hello%2C%20I%20am%20interested%20in%20Raena%20Learning' target='_blank'>
                 <Image
                     src={whatsapp}
                     height={60}
