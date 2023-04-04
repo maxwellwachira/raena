@@ -69,36 +69,36 @@ function Footer({ data }: FooterLinksProps) {
         </Text>
 
         <Group spacing={20} className={classes.social} position="right" noWrap>
-          <Text>Follow Us</Text>
+          <Text color="dimmed" size="sm">Follow Us</Text>
           <Anchor href="" target="_blank">
             <Image 
               src={instagramIcon}
-              width={22}
-              height={22}
+              width={20}
+              height={20}
               alt="Instagram"
             />
           </Anchor>
           <Anchor href="" target="_blank">
             <Image 
               src={facebookIcon}
-              width={22}
-              height={22}
+              width={20}
+              height={20}
               alt="Facebook"
             />
           </Anchor>
           <Anchor href="" target="_blank">
             <Image 
               src={twitterIcon}
-              width={22}
-              height={22}
+              width={20}
+              height={20}
               alt="Twitter"
             />
           </Anchor>
           <Anchor href="" target="_blank">
             <Image 
               src={linkedinIcon}
-              width={22}
-              height={22}
+              width={20}
+              height={20}
               alt="Linkedin"
             />
           </Anchor>

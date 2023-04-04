@@ -80,7 +80,7 @@ export const useStyles = createStyles((theme) => ({
       paddingTop: theme.spacing.xl,
       paddingBottom: theme.spacing.xl,
       borderTop: `1px solid ${
-        theme.colorScheme === 'dark' ? theme.colors.dark[4] : colors.primaryColor
+        theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
       }`,
   
       [theme.fn.smallerThan('sm')]: {
