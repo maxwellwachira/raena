@@ -42,7 +42,6 @@ const CompetitiveAdvantage = () => {
                 <List
                     spacing="md"
                     size="md"
-                    center
                     icon={<IconCaretRight size={24} />}
                     mt={20}
                 >

@@ -4,13 +4,15 @@ import { IconCircleCheck } from "@tabler/icons";
 import Image from "next/image";
 import whatwedoImage from "@/assets/whatwedo.png";
 import visionImage from "@/assets/vision.png";
+import { useViewportSize } from "@mantine/hooks";
 
 
 const WhatWeDo = () => {
+    const { width } = useViewportSize();
     return (
-        <Container size="lg" mt={150}>
+        <Container size="lg" mt={width > 768 ? 150 : 80}>
             <Text color={colors.primaryColor} weight={600} fz={32} align='center' mt={10}>What We Do</Text>
-            <Grid gutter={30} mt={30}>
+            <Grid gutter={30} mt={width > 768 ? 30 : 0}>
                 <Grid.Col md={4}>
                     <List
                         spacing="md"

@@ -7,14 +7,17 @@ import image3 from "@/assets/naomi_with_student.jpg";
 import image4 from "@/assets/raena_center.jpg";
 import elipse from "@/assets/elipse.png";
 
-const useStyles = createStyles(() => ({
+const useStyles = createStyles((theme) => ({
     ellipse: {
         position: "absolute",
         top: 160,
         left: 0,
         right: 0,
         marginLeft: "45%",
-        zIndex: -1
+        zIndex: -1,
+        [theme.fn.smallerThan('sm')]: {
+            display: "none"
+        },
     }
 }))
 
