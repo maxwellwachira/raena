@@ -17,7 +17,7 @@ const TellUs = () => {
     const { classes } = useStyles();
 
     return (
-        <Container size="lg">
+        <Container size="lg" mt={60}>
             <Text align="center" mt={20} fz={36} color={colors.primaryColor}>Tell Us</Text>
             <Grid mt={30}>
                 <Grid.Col md={6}>
