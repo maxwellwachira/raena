@@ -4,6 +4,7 @@ import Image from "next/image";
 import YouTube from "react-youtube";
 import fancyRecangle from "@/assets/designedrectangle2.png";
 import { IconArrowRight } from "@tabler/icons";
+import { useViewportSize } from "@mantine/hooks";
 
 const useStyles = createStyles(() => ({
     blueRectangle: {
@@ -41,8 +42,9 @@ const useStyles = createStyles(() => ({
 
 const PreparingStudents = () => {
     const { classes } = useStyles();
+    const { width } = useViewportSize();
     return (
-        <Container mt={100} size="lg">
+        <Container mt={width > 768 ? 100 : 60} size="lg">
             <Text color={colors.primaryColor} weight={600} fz={36} align='center' mt={10}>Preparing Students for Success in All Areas of Life</Text>
             <Grid mt={30}>
                 <Grid.Col md={4}>
@@ -70,10 +72,8 @@ const PreparingStudents = () => {
                     </Button>
                 </Grid.Col>
                 <Grid.Col md={8}>
-                    <Box className={classes.videoContainer}>
-                        <Box className={classes.orangeRectangle} />
                         <Center>
-                            <Box style={{ background: 'white', marginTop: 30, borderRadius: 10, padding: 0 }}>
+                            <Box>
                                 <YouTube
                                     videoId="v5ug8DbX_I0"
                                     style={{
@@ -100,15 +100,6 @@ const PreparingStudents = () => {
                                 />
                             </Box>
                         </Center>
-                        <Box className={classes.blueRectangle}>
-                            <Image
-                                src={fancyRecangle}
-                                height={250}
-                                width={400}
-                                alt="Fancy design"
-                            />
-                        </Box>
-                    </Box>
                 </Grid.Col>
             </Grid>
 

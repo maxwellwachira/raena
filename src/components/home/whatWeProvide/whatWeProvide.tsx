@@ -4,8 +4,9 @@ import Image from "next/image";
 import dictionaryImage from "@/assets/dictionary.png";
 import mathImage from "@/assets/math.png";
 import scienceImage from "@/assets/science.png";
+import { useViewportSize } from "@mantine/hooks";
 
-const useStyles = createStyles(() => ({
+const useStyles = createStyles((theme) => ({
     imagePostion: {
         position: 'relative',
         display: 'flex',
@@ -19,12 +20,17 @@ const useStyles = createStyles(() => ({
         color: 'white',
         fontSize: 70,
         top: '30%',
+        [theme.fn.smallerThan('sm')]: {
+           fontSize:40,
+           top: '40%'
+        },
     }
 
 }));
 
 const WhatWeProvide = () => {
     const { classes } = useStyles();
+    const { width } = useViewportSize();
     return (
         <Container size="lg" mt={100}>
             <Text color={colors.primaryColor} weight={600} fz={36} align='center' mt={10}>What We Provide</Text>
@@ -51,17 +57,18 @@ const WhatWeProvide = () => {
             <Text color={colors.primaryColor} weight={600} fz={36} align='center' mt={30}>Core Subjects</Text>
             <Grid gutter={40} mt={20}>
                 <Grid.Col md={6}>
+                <Text color={colors.primaryColor} weight={600} fz={28} style={{display: width > 768 ? "none" : ""}} mb={10}>Math & English Tutoring</Text>
                     <Center>
                         <Image
                             src={ mathImage}
                             alt="Maths Image"
-                            height={280}
-                            width={500}
+                            height={width > 768 ? 280 : 200}
+                            width={width > 768 ? 500 : 320}
                         />
                     </Center>
                 </Grid.Col>
                 <Grid.Col md={6}>
-                    <Text color={colors.primaryColor} weight={600} fz={28}>Math & English Tutoring</Text>
+                    <Text color={colors.primaryColor} weight={600} fz={28} style={{display: width > 768 ? "" : "none"}}>Math & English Tutoring</Text>
                     <Text>Raena Learning English tutors know the difference between teaching English the British system way and the Kenyan system way. We tutor children from 5 years to 18 years old. We prepare students for 11+ and 13+Common Entrance exams, KCPE , KCSE, IGCSE -Cambridge and Edexcel and A Levels. For the Early years students who need help in developing their reading skills , we use the Jolly Phonics programme.</Text>
                     <Text mt={10}>We are careful to use the correct materials and methodologies. We follow the school teacher to ensure that the correct method is used with every student.</Text>
                 </Grid.Col>
@@ -70,13 +77,13 @@ const WhatWeProvide = () => {
                     <Text>Since its founding, Raena Learning has been one of the most trusted names in the industry. We assist students in Primary science and secondary sciences such as Chemistry , Biology and Physics.</Text>
                     <Text mt={10}>Hire us for this service and learn how we cater to the needs of each client, ensuring the results you need and deserve.</Text>
                 </Grid.Col>
-                <Grid.Col md={6} mt={20}>
+                <Grid.Col md={6} mt={width > 768 ? 20 : 0}>
                     <Center>
                         <Image
                             src={scienceImage}
                             alt="Science Image"
-                            height={280}
-                            width={500}
+                            height={width > 768 ? 280 : 200}
+                            width={width > 768 ? 500 : 320}
                         />
                     </Center>
                 </Grid.Col>
