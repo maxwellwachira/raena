@@ -22,7 +22,7 @@ export const useStyles = createStyles((theme) => ({
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        height: "75px",
+        height: "60px",
         width: "100%",
     },
 

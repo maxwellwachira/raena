@@ -57,14 +57,14 @@ const Layout = ({ children }: Props) => {
             navbarOffsetBreakpoint="md"
             fixed
             header={
-                <Header height={width > 768 ? 95 : 75} className={`${classes.headerBackground}`} withBorder={isHome ? true : false} style={{ boxShadow: isScrolled ? 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px' : 'none' }}>
+                <Header height={width > 768 ? 95 : 60} className={`${classes.headerBackground}`} withBorder={isHome ? true : false} style={{ boxShadow: isScrolled ? 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px' : 'none' }}>
                     <MediaQuery largerThan="md" styles={{ display: "none" }}>
                         <div className={classes.burger}>
                             <Anchor href="/" ml="xl">
                                 <Image
                                     src={logo}
-                                    width={110}
-                                    height={70}
+                                    width={180}
+                                    height={45}
                                     alt='logo'
 
                                 />
@@ -96,10 +96,10 @@ const Layout = ({ children }: Props) => {
                             <Anchor className={`${classes.navitem} ${router.pathname === "/book-online" ? classes.active : ""}`} href="/book-online">Book Online</Anchor>
                             <Anchor className={`${classes.navitem} ${router.pathname === "/learning-resources" ? classes.active : ""}`} href="/learning-resources">Our Learning Resources</Anchor>
                             <Anchor className={`${classes.navitem} ${router.pathname === "/faq" ? classes.active : ""}`} href="/faq">FAQ</Anchor>
-                            <Anchor className={`${classes.navitem} ${router.pathname === "/blogs" ? classes.active : ""}`} href="/blogs" target="_blank">Blogs</Anchor>
+                            <Anchor className={`${classes.navitem} ${router.pathname === "/blogs" ? classes.active : ""}`} href="/blogs">Blogs</Anchor>
                             <Divider size="sm" orientation="vertical" mx="md" />
                             <div>
-                            <Anchor className={`${classes.navitem} ${classes.contactUs} ${router.pathname === "/auth/register" ? classes.activeContactUs : ""}`} href="/auth/register">Contact Us</Anchor>
+                            <Anchor className={`${classes.navitem} ${classes.contactUs} ${router.pathname === "/contact" ? classes.activeContactUs : ""}`} href="/contact">Contact Us</Anchor>
                             </div>
                         </div>
                     </div>
@@ -124,15 +124,17 @@ const Layout = ({ children }: Props) => {
                     <div className={classes.navbar}>
                         <Anchor className={`${classes.navitem} ${router.pathname === "/" ? classes.active : ""}`} href="/">Home</Anchor>
                         <Space h="xs" />
-                        <Anchor className={`${classes.navitem} ${router.pathname === "/courses" ? classes.active : ""}`} href="/courses">Courses</Anchor>
+                        <Anchor className={`${classes.navitem} ${router.pathname === "/about" ? classes.active : ""}`} href="/about">About Us</Anchor>
                         <Space h="xs" />
-                        <Anchor className={`${classes.navitem} ${router.pathname === "/about" ? classes.active : ""}`} href="/about">About</Anchor>
+                        <Anchor className={`${classes.navitem} ${router.pathname === "/book-online" ? classes.active : ""}`} href="/book-online">Book Online</Anchor>
+                        <Space h="xs" />
+                        <Anchor className={`${classes.navitem} ${router.pathname === "/learning-resources" ? classes.active : ""}`} href="/learning-resources">Our Learning Resources</Anchor>
                         <Space h="xs" />
                         <Anchor className={`${classes.navitem} ${router.pathname === "/faq" ? classes.active : ""}`} href="/faq">FAQ</Anchor>
                         <Space h="xs" />
-                        <Anchor className={`${classes.navitem} ${router.pathname === "/find-a-home" ? classes.active : ""}`} href="https://forms.gle/MZ2BhLS2WMySZYFP7" target="_blank">Financial Aid</Anchor>
+                        <Anchor className={`${classes.navitem} ${router.pathname === "/blogs" ? classes.active : ""}`} href="/blogs">Blogs</Anchor>
                         <div style={{ marginTop: 20, marginLeft: 5 }}>
-                            <Anchor className={`${classes.navitem} ${classes.contactUs} ${router.pathname === "/auth/register" ? classes.activeContactUs : ""}`} href="/auth/register">Register</Anchor>
+                            <Anchor className={`${classes.navitem} ${classes.contactUs} ${router.pathname === "/contact" ? classes.activeContactUs : ""}`} href="/contact">Contact Us</Anchor>
                         </div>
                     </div>
                 </Drawer>
