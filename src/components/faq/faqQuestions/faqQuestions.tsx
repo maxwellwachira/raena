@@ -1,9 +1,62 @@
 import { colors } from "@/constants/colors";
-import { Accordion, Container, Text } from "@mantine/core";
+import { Accordion, Box, Container, Loader, Text } from "@mantine/core";
 import { IconPlus } from "@tabler/icons";
+import { urls } from "@/constants/urls";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+
+interface Faq {
+    data: {
+        id: number;
+        attributes: {
+            question: string;
+            answer: string;
+            createdAt: string;
+            updatedAt: string;
+            publishedAt: string;
+        }
+    }[];
+    meta: {
+        pagination: {
+            page: number;
+            pageSize: number;
+            pageCount: number;
+            total: number;
+        }
+    }
+}
 
 
 const FaqQuestions = () => {
+    const [allFaqs, setAllFaqs] = useState<Faq | null>(null);
+    const [loading, setLoading] = useState(true);
+
+    const getAllFaqs = async () => {
+        try {
+            setLoading(true);
+            const { data } = await axios.get(`${urls.strapiUrl}/faqs`);
+            console.log(data);
+            setAllFaqs(data);
+            setLoading(false);
+        } catch (error) {
+            console.log(error);
+            setLoading(false);
+        }
+    }
+
+    useEffect(() => {
+        getAllFaqs();
+    }, []);
+
+    if(loading){
+        return (
+            <Box>
+                <Loader variant="dots" color={colors.secondaryColor} />
+            </Box>
+        )
+    }
+
     return (
         <Container size="lg" mt={80}>
             <Accordion
@@ -16,29 +69,17 @@ const FaqQuestions = () => {
                     },
                 }}
             >
-                <Accordion.Item value="What are your Opening Times? ">
-                    <Accordion.Control style={{ color: colors.primaryColor, fontSize: 17 }}>What are your Opening Times? </Accordion.Control>
-                    <Accordion.Panel>
-                        <Text>
-                            Monday- Friday: 8:00AM-7:30PM <br />Saturday: 8:00am- 5:00pm <br />Sunday: CLOSED
-                        </Text>
-                    </Accordion.Panel>
-                </Accordion.Item>
-                <Accordion.Item value="How long are the lessons?">
-                    <Accordion.Control style={{ color: colors.primaryColor, fontSize: 17 }}>How long are the lessons? </Accordion.Control>
-                </Accordion.Item>
-                <Accordion.Item value="What happens at the assessment stage?">
-                    <Accordion.Control style={{ color: colors.primaryColor, fontSize: 17 }}>What happens at the assessment stage? </Accordion.Control>
-                </Accordion.Item>
-                <Accordion.Item value="How are the students taught?">
-                    <Accordion.Control style={{ color: colors.primaryColor, fontSize: 17 }}>How are the students taught? </Accordion.Control>
-                </Accordion.Item>
-                <Accordion.Item value="What is the ratio of children to tutors?">
-                    <Accordion.Control style={{ color: colors.primaryColor, fontSize: 17 }}>What is the ratio of children to tutors?</Accordion.Control>
-                </Accordion.Item>
-                <Accordion.Item value="Can I get one-to-one tuition?">
-                    <Accordion.Control style={{ color: colors.primaryColor, fontSize: 17 }}>Can I get one-to-one tuition?</Accordion.Control>
-                </Accordion.Item>
+                {allFaqs && allFaqs.data.map(faq => (
+                    <Accordion.Item value={faq.attributes.question}>
+                        <Accordion.Control style={{ color: colors.primaryColor, fontSize: 17 }}>{faq.attributes.question} </Accordion.Control>
+                        <Accordion.Panel>
+                            <Text style={{whiteSpace: "pre-wrap"}}>
+                                {faq.attributes.answer}
+                            </Text>
+                        </Accordion.Panel>
+                    </Accordion.Item>
+                ))}
+
             </Accordion>
         </Container>
     )
