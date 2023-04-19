@@ -1,7 +1,10 @@
+import BlogsCards from "@/components/blogs/blogCards";
+import BlogIntro from "@/components/blogs/blogsIntro";
+import Footer from "@/components/common/footer/footer";
 import Layout from "@/components/common/layout/layout";
 import { NextPage } from "next"
 import Head from "next/head";
-
+import { footerData } from "@/constants/footer";
 
 const AllBlogsPage: NextPage = () => {
     return (
@@ -13,7 +16,9 @@ const AllBlogsPage: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Layout>
-                
+                <BlogIntro />
+                <BlogsCards />
+                <Footer data={footerData} />
             </Layout>
         </>
     )
