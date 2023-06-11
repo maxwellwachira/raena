@@ -32,7 +32,7 @@ const Hero = () => {
     return (
         <Box sx={{ marginTop: -15 }}>
             <BackgroundImage
-                src={`${urls.frontendUrl}/hero.png`}
+                src={`/hero.png`}
                 radius="sm"
             >
                 <Box className={classes.heroContainer}>
