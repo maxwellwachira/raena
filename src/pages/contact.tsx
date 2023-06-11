@@ -2,7 +2,6 @@ import Footer from "@/components/common/footer/footer";
 import Layout from "@/components/common/layout/layout";
 import ContactUs from "@/components/contact/contactUs";
 import TellUs from "@/components/contact/tellUs";
-import VisitUs from "@/components/contact/visitUs";
 import { footerData } from "@/constants/footer";
 import { NextPage } from "next"
 import Head from "next/head";
@@ -19,7 +18,6 @@ const FaqPage: NextPage = () => {
             </Head>
             <Layout>
                 <ContactUs />
-                <VisitUs />
                 <TellUs />
                 <Footer data={footerData} />
             </Layout>

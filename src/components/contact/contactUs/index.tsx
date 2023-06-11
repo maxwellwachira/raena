@@ -8,7 +8,7 @@ import { IconMail, IconPhone } from "@tabler/icons";
 const ContactUs = () => {
     return (
         <Container size="lg">
-            <Text align="center" mt={20} fz={36} color={colors.primaryColor}>Contact Us</Text>
+            <Text align="center" mt={20} fz={36} color={colors.primaryColor}>We want to hear from you</Text>
             <Grid>
                 <Grid.Col md={6}>
                     <Center>
@@ -26,7 +26,7 @@ const ContactUs = () => {
                         <Text color={colors.secondaryColor} fz={24}>Contact Information</Text>
                         <Group>
                             <IconPhone />
-                            <Text>0721 794 005 / 0722 519 962 / 0733 382 292 / 020 520 7521</Text>
+                            <Text>0721 794 005 / 0722 519 962 / 0733 382 292</Text>
                         </Group>
                         <Group>
                             <IconMail />

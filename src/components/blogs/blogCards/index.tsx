@@ -1,19 +1,87 @@
-import { Container, Grid } from "@mantine/core"
+import { useEffect, useState } from "react";
+import { Container, Grid, Loader } from "@mantine/core"
 import BlogCard from "./blogCard";
+import axios from "axios";
+import { urls } from "@/constants/urls";
+
+interface Blogs {
+    data: {
+        id: number;
+        attributes: {
+            title: string;
+            readDuration: number;
+            content: string;
+            description: string;
+            slug: string;
+            thumbnail: {
+                data: {
+                    id: 1,
+                    attributes: {
+                        name: string;
+                        height: number;
+                        width: number;
+                        ext: string;
+                        url: string;
+                    }
+                }
+            },
+            author: {
+                data: {
+                    id: number;
+                    attributes: {
+                        firstName: string;
+                        lastName: string;
+                    }
+                }
+            }
+            createdAt: string;
+            updatedAt: string;
+            publishedAt: string;
+        }
+    }[];
+    meta: {
+        pagination: {
+            page: number;
+            pageSize: number;
+            pageCount: number;
+            total: number;
+        }
+    }
+}
 
 const BlogsCards = () => {
-    let count = 10;
+    const [loading, setLoading] = useState(true);
+    const [blogs, setBlogs] = useState<Blogs | null>(null);
 
-    const getAllCards = () => {
-        
+    const getAllBlogs = async () => {
+        setLoading(true);
+        try {
+            const { data } = await axios.get(`${urls.strapiUrl}/blogs?populate=*`);
+            console.log(data);
+            setBlogs(data);
+            setLoading(false);
+        } catch (error) {
+            console.log(error);
+            setLoading(false);
+        }
     }
+
+    const blogCards = () => {
+        return blogs ? blogs.data.map((blog) => (
+            <Grid.Col md={4} key={blog.id}>
+                <BlogCard data={blog} />
+            </Grid.Col>
+        )) : <Loader />
+    }
+
+    useEffect(() => {
+        getAllBlogs();
+    }, []);
 
     return (
         <Container size="lg" mt={100}>
             <Grid>
-                <Grid.Col md={4}>
-                    <BlogCard />
-                </Grid.Col>
+                { blogCards() }
             </Grid>
         </Container>
     )
