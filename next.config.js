@@ -7,7 +7,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ['localhost',],
+    domains: ['localhost', '143.42.26.38', 'raenalearning.org'],
   }
 }
 
