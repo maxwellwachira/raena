@@ -18,10 +18,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
         const paths = slugs.map((slug: string) => ({
             params: { slug },
         }));
-        return { paths, fallback: false };
+        return { paths, fallback: true };
     } catch (error) {
         console.log(error);
-        return { paths: [], fallback: false };
+        return { paths: [], fallback: true };
     }
 }
 
