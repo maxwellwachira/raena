@@ -86,7 +86,7 @@ const Blog: NextPage = (props: any) => {
                         <Text size="sm" color="dimmed">{props.blog.readDuration} min Read</Text>
                         <Box style={{display: "flex", gap: 5}}>
                             <IconUser size={14}/>
-                            <Text size="sm" color="dimmed">{props.blog.author.data.attributes.firstName} {props.blog.author.data.attributes.lastName}</Text>
+                            <Text size="sm" color="dimmed">{props?.blog?.author?.data?.attributes.firstName} {props.blog.author.data.attributes.lastName}</Text>
                         </Box>
                     </Group>
                     <ReactMarkdown
