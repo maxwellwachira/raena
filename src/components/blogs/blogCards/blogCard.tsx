@@ -1,4 +1,4 @@
-import { ActionIcon, Button, Card, Group, Text, createStyles } from "@mantine/core";
+import { ActionIcon, Button, Card, Group, Stack, Text, createStyles } from "@mantine/core";
 import Image from "next/image";
 import blog1Image from "@/assets/blog1.png";
 import { IconShare } from "@tabler/icons";
@@ -44,11 +44,13 @@ interface BlogData {
 
 const useStyles = createStyles(() => ({
     readMoreButton: {
-        background: colors.secondaryColor,
-        color: "white",
-        ":hover": {
-            background: colors.secondaryColor,
-            opacity: 0.8
+        border: `1px solid ${colors.primaryColor}`,
+        background: "transparent",
+        color: colors.primaryColor,
+
+        '&:hover': {
+            background: colors.primaryColor,
+            color: "white"
         }
     }
 }))
@@ -77,22 +79,16 @@ const BlogCard = ( props: BlogData ) => {
             </Group>
             <Text my={10} color={colors.secondaryColor} fz={20}>{props.data.attributes.title}</Text>
             <Text lineClamp={3}>{props.data.attributes.description}</Text>
-            <Group mt={20} position="apart">
+            <Stack mt={20}>
                 <Button
                     component="a"
                     href={`/blogs/${props.data.attributes.slug}`}
                     className={classes.readMoreButton}
+                    radius={10}
                 >
                     Read More
                 </Button>
-                <ActionIcon
-                    color="dark"
-                    size="lg"
-                    variant="light"
-                >
-                    <IconShare size={18} />
-                </ActionIcon>
-            </Group>
+            </Stack>
         </Card>
     )
 }

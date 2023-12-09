@@ -70,7 +70,7 @@ function Footer({ data }: FooterLinksProps) {
 
         <Group spacing={20} className={classes.social} position="right" noWrap>
           <Text color="dimmed" size="sm">Follow Us</Text>
-          <Anchor href="" target="_blank">
+          <Anchor href="https://www.instagram.com/raenalearning/" target="_blank">
             <Image 
               src={instagramIcon}
               width={20}
@@ -78,7 +78,7 @@ function Footer({ data }: FooterLinksProps) {
               alt="Instagram"
             />
           </Anchor>
-          <Anchor href="" target="_blank">
+          <Anchor href="https://www.facebook.com/raenalearning.centre" target="_blank">
             <Image 
               src={facebookIcon}
               width={20}
@@ -86,7 +86,7 @@ function Footer({ data }: FooterLinksProps) {
               alt="Facebook"
             />
           </Anchor>
-          <Anchor href="" target="_blank">
+          <Anchor href="https://twitter.com/learningRaena" target="_blank">
             <Image 
               src={twitterIcon}
               width={20}
@@ -94,7 +94,7 @@ function Footer({ data }: FooterLinksProps) {
               alt="Twitter"
             />
           </Anchor>
-          <Anchor href="" target="_blank">
+          <Anchor href="https://www.linkedin.com/in/naomi-wanjagua-22195419a/" target="_blank">
             <Image 
               src={linkedinIcon}
               width={20}

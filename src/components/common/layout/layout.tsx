@@ -94,7 +94,7 @@ const Layout = ({ children }: Props) => {
                             <Anchor className={`${classes.navitem} ${router.pathname === "/" ? classes.active : ""}`} href="/">Home</Anchor>
                             <Anchor className={`${classes.navitem} ${router.pathname === "/about" ? classes.active : ""}`} href="/about">About Us</Anchor>
                             <Anchor className={`${classes.navitem} ${router.pathname === "/book-online" ? classes.active : ""}`} href="/book-online">Book Online</Anchor>
-                            <Anchor className={`${classes.navitem} ${router.pathname === "/learning-resources" ? classes.active : ""}`} href="/learning-resources">Our Learning Resources</Anchor>
+                            <Anchor className={`${classes.navitem} ${router.pathname === "/learning-resources" ? classes.active : ""}`} href="/learning-resources">Learning Resources</Anchor>
                             <Anchor className={`${classes.navitem} ${router.pathname === "/faq" ? classes.active : ""}`} href="/faq">FAQ</Anchor>
                             <Anchor className={`${classes.navitem} ${router.pathname === "/blogs" ? classes.active : ""}`} href="/blogs">Blogs</Anchor>
                             <Divider size="sm" orientation="vertical" mx="md" />
@@ -128,7 +128,7 @@ const Layout = ({ children }: Props) => {
                         <Space h="xs" />
                         <Anchor className={`${classes.navitem} ${router.pathname === "/book-online" ? classes.active : ""}`} href="/book-online">Book Online</Anchor>
                         <Space h="xs" />
-                        <Anchor className={`${classes.navitem} ${router.pathname === "/learning-resources" ? classes.active : ""}`} href="/learning-resources">Our Learning Resources</Anchor>
+                        <Anchor className={`${classes.navitem} ${router.pathname === "/learning-resources" ? classes.active : ""}`} href="/learning-resources">Learning Resources</Anchor>
                         <Space h="xs" />
                         <Anchor className={`${classes.navitem} ${router.pathname === "/faq" ? classes.active : ""}`} href="/faq">FAQ</Anchor>
                         <Space h="xs" />

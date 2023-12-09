@@ -9,30 +9,21 @@ export const footerData = [
         ]
     },
     {
-        title: 'Blogs', 
-        links: [
-            { id: 0, link: '/blogs', label: 'Blogs Page' },
-            { id: 1, link: '#', label: 'Authentic Learning' },
-            { id: 2, link: '#', label: 'GMAT' },
-            { id: 2, link: '#', label: 'IELTS AND TOEFL' },
-        ]
-    }, 
-    {
         title: 'Contact', 
         links: [
             { id: 0, link: '/contact', label: 'Contact Page' },
             { id: 1, link: '/faq', label: 'FAQ Page' },
             { id: 2, link: 'mailto:info@raenalearning.org', label: 'Email' },
-            { id: 2, link: 'mailto:scholarship@ategoschool.com', label: 'WhatsApp' },
+            { id: 2, link: 'https://wa.me/254721794005?text=Hello%2C%20I%20am%20interested%20in%20Raena%20Learning', label: 'WhatsApp' },
         ]
     }, 
     {
         title: 'Social Links',
         links: [
-            { id: 0, link: '#', label: 'Twitter' },
-            { id: 1, link: '#', label: 'LinkedIn' },
-            { id: 2, link: '#', label: 'Instagram' },
-            { id: 3, link: '#', label: 'YouTube' }
+            { id: 0, link: 'https://twitter.com/learningRaena', label: 'Twitter' },
+            { id: 1, link: 'https://www.linkedin.com/in/naomi-wanjagua-22195419a/', label: 'LinkedIn' },
+            { id: 2, link: 'https://www.facebook.com/raenalearning.centre', label: 'Facebook' },
+            { id: 3, link: 'https://www.youtube.com/@raenalearningcentreltd/', label: 'YouTube' }
         ]
     },
 ];

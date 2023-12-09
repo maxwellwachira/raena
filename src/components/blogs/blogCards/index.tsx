@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Container, Grid, Loader } from "@mantine/core"
+import { Container, Grid, Loader, Stack } from "@mantine/core"
 import BlogCard from "./blogCard";
 import axios from "axios";
 import { urls } from "@/constants/urls";
+import { colors } from "@/constants/colors";
 
 interface Blogs {
     data: {
@@ -71,7 +72,9 @@ const BlogsCards = () => {
             <Grid.Col md={4} key={blog.id}>
                 <BlogCard data={blog} />
             </Grid.Col>
-        )) : <Loader />
+        )) : <Stack>
+            <Loader color={colors.primaryColor} />
+        </Stack>
     }
 
     useEffect(() => {

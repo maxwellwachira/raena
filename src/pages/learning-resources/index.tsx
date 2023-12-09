@@ -1,9 +1,10 @@
 import Footer from "@/components/common/footer/footer";
 import Layout from "@/components/common/layout/layout";
 import LearningResourcesIntro from "@/components/learningResources/learningResoucesIntro/learningResourcesIntro";
-import { NextPage } from "next"
+import { NextPage } from "next";
 import Head from "next/head";
 import { footerData } from "@/constants/footer";
+import LearningPacks from "@/components/learningResources/learningPacks/learningPacks";
 
 
 const LearningResourcesPage: NextPage = () => {
@@ -17,6 +18,7 @@ const LearningResourcesPage: NextPage = () => {
             </Head>
             <Layout>
                 <LearningResourcesIntro />
+                <LearningPacks />
                 <Footer data={footerData} />
             </Layout>
         </>
