@@ -3,7 +3,7 @@ import { Box, Button, Card, Container, Grid, Group, Loader, Stack, Text, createS
 import axios from "axios";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import books from "@/assets/books.png";
+import books from "@/assets/folder.jpg";
 import { colors } from "@/constants/colors";
 import { IconCalendar, IconDownload, IconLoader, IconUser } from "@tabler/icons";
 import { useViewportSize } from "@mantine/hooks";
@@ -142,14 +142,16 @@ const LearningPacks = () => {
     const resourcesCards = () => {
         return libraryData ? libraryData.data.map((library) => (
             <Grid.Col md={4} lg={3} key={library.id}>
-                <Card shadow="sm" p="lg" radius="md" >
+                <Card shadow="sm" p="lg" radius="md" withBorder >
                     <Card.Section>
-                        <Image
-                            src={books}
-                            style={{ width: "100%" }}
-                            height={width > 768 ? 160 : 200}
-                            alt="books"
-                        />
+                        <Stack align="center">
+                            <Image
+                                src={books}
+                                style={{ width: 120 }}
+                                height={100}
+                                alt="books"
+                            />
+                        </Stack>
                     </Card.Section>
                     <Group position="apart" mt={5}>
                         <Group spacing={5} align="center">

@@ -122,7 +122,7 @@ const OurServices = () => {
                                     style={{ width: "100%", height: 180 }}
                                 />
                             </Card.Section>
-                            <Text my={10} color={colors.secondaryColor} fz={18}>GENERAL ASSESSMENT</Text>
+                            <Text my={10} color={colors.secondaryColor} fz={18}>SCIENCE / HUMANITIES ASSESSMENT</Text>
                             <Divider mb={10} />
                             <Text mt={10}>1 hr</Text>
                             <Text mt={10}>Free</Text>
